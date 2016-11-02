@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu')
+
+@mixin wh($w, $h:$w)
+  width: w
+  height: h
+
+$color-afl: #265582
+$color-klm: #3AA1D1
+$color-s7 : #C2D91E
+
+#maincontainer
+  font-family: 'Ubuntu', sans-serif
+  #container-filter
+    margin: 7.5vh 0 50px
+  #container-cards
+    .card-header
+      color: white
+      &__carrier
+        &_aeroflot,
+          background: $color-afl
+          & + .card-block
+            border: 1px solid $color-afl
+        &_klm
+          background: $color-klm
+          & + .card-block
+            border: 1px solid $color-klm
+        &_s7
+          background: $color-s7
+          & + .card-block
+            border: 1px solid $color-s7
+
+    .card-block
+      p
+        margin-bottom: 5px
+      &__deptime
+        font-weight: 600
+        font-size: 1.2em
+
+    .pulse
+      margin: 0 auto
+      @include wh(40px)
+      background-color: $color-klm
